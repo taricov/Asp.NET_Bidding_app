@@ -13,7 +13,8 @@ public class Bid
     [ForeignKey("IdentityUserId")]
     public IdentityUser? User {get; set;}
 
-    public string? ListingId {get; set;}
+    
+    public int? ListingId {get; set;}
     [ForeignKey("ListingId")]
     public Listing? Listing {get; set;}
 

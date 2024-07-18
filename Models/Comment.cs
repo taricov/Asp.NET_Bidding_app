@@ -12,8 +12,8 @@ public class Comment
     public string? IdentityUserId { get; set; }
     [ForeignKey("IdentityUserId")]
     public IdentityUser? User {get; set;}
+    public int? ListingId { get; set; }
 [ForeignKey("ListingId")]
     public Listing? Listing {get; set;}
-    public string? ListingId { get; set; }
 
 }

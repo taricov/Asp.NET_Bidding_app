@@ -13,11 +13,11 @@ public class Listing
     public decimal Price {get; set;}
     public string ImgPath {get; set;} = "";
     public bool IsSold {get; set;} 
+    [Required]
+    public string? IdentityUserId {get; set;}
     public List<Bid>? Bids {get; set;}
     public List<Comment>? Comments {get; set;} 
     [ForeignKey("IndentityUserId")]
     public IdentityUser? User {get; set;}
-    [Required]
-    public string? IdentityUserId {get; set;}
     
 }

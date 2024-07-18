@@ -9,7 +9,11 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+    public ApplicationDbContext()
+    {
+    }
     public DbSet<Listing> Listings {get; set;}
     public DbSet<Bid> Bids {get; set;}
     public DbSet<Comment> Comments {get; set;}
+
 }

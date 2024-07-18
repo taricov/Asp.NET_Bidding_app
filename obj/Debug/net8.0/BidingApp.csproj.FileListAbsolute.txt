@@ -136,3 +136,7 @@
 /Users/taricov/dev/BidingApp/obj/Debug/net8.0/BidingApp.pdb
 /Users/taricov/dev/BidingApp/obj/Debug/net8.0/BidingApp.genruntimeconfig.cache
 /Users/taricov/dev/BidingApp/obj/Debug/net8.0/ref/BidingApp.dll
+/Users/taricov/dev/BidingApp/bin/Debug/net8.0/Npgsql.dll
+/Users/taricov/dev/BidingApp/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/taricov/dev/BidingApp/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.Design.dll
+/Users/taricov/dev/BidingApp/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
