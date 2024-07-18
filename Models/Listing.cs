@@ -17,7 +17,7 @@ public class Listing
     public string? IdentityUserId {get; set;}
     public List<Bid>? Bids {get; set;}
     public List<Comment>? Comments {get; set;} 
-    [ForeignKey("IndentityUserId")]
+    [ForeignKey("IdentityUserId")]
     public IdentityUser? User {get; set;}
     
 }
