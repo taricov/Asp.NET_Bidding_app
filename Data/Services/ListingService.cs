@@ -11,19 +11,16 @@ public class ListingService: IListingService
         _context = context;
     }
 
-    public async Task<Listing> Add(Listing listing)
+    public async Task Add(Listing listing)
     {
         _context.Listings.Add(listing);
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync();  
     }
     public IQueryable<Listing> GetAll()
 {
       var applicationDbContext = _context.Listings.Include(b => b.User);
       return applicationDbContext;
     }
-    public  Add()
-    {
 
-    }
 
 }

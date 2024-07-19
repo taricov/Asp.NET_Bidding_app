@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BidingApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240718191945_Initial")]
-    partial class Initial
+    [Migration("20240719081551_AddedIdentityScheme")]
+    partial class AddedIdentityScheme
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

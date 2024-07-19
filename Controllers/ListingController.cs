@@ -81,14 +81,7 @@ namespace BidingApp.Controllers
                 await _listingService.Add(listingObj);
                 return RedirectToAction("index");
             }
-            return View("index");
-            // if (ModelState   .IsValid)
-            // {
-            //     _context.Add(listing);
-            //     await _context.SaveChangesAsync();
-            //     return RedirectToAction(nameof(Index));
-            // }
-            // return View(listing);
+            return View(listing);
         }
 
         // // GET: Listing/Edit/5
