@@ -3,10 +3,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BidingApp.Controllers
 {
-    public class ListingController(IListingService listingService) : Controller
+    public class ListingController: Controller
     {
-        private readonly IListingService _listingService = listingService;
-        private readonly IWebHostEnvironment? _webHostEnvironment;
+        private readonly IListingService _listingService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public ListingController(IListingService listingServ, IWebHostEnvironment webHostEnv)
+        {
+            _listingService = listingServ;
+            _webHostEnvironment = webHostEnv;
+        }
 
         // GET: Listing
         public async Task<IActionResult> Index()
@@ -48,8 +54,7 @@ namespace BidingApp.Controllers
         {
             if(listing.Image != null)
             {
-                var dirPath = _webHostEnvironment!.WebRootPath;
-                string uploadDir = Path.Combine(dirPath, "images");
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "images");
                 string fileName = listing.Image.FileName;
                 string filePath = Path.Combine(uploadDir, fileName);
                 using(var fileStream = new FileStream(filePath, FileMode.Create))
