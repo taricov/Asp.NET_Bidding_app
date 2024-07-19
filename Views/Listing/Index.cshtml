@@ -3,19 +3,21 @@
 @{
     ViewData["Title"] = "Bids Listings";
 }
-<h1 class="text-lg">Active Listings</h1>
+<div class="flex justify-between">
+
+<h1 class="text-xl ">Active Listings...</h1>
+<a asp-action="Create" class="text-white bg-green-600 hover:bg-[#2557D6]/90 focus:ring-4 focus:ring-[#2557D6]/50 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#2557D6]/50 me-2 mb-2">
+Create New Listing
+</a>
+</div>
 @if(!Model.Any())
 {
-
-<a asp-action="Create">Create New Listing</a>
-
-
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    @Html.DisplayNameFor(model => model.Title) 
+                    @Html.DisplayNameFor(model => model.Title)
                 </th>
                 <th scope="col" class="px-6 py-3">
                      @Html.DisplayNameFor(model => model.Description)

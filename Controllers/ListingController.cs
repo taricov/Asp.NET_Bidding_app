@@ -1,26 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using BidingApp;
-using BidingApp.Data;
-using Microsoft.AspNetCore.Components.Web;
-using System.Drawing;
 
 namespace BidingApp.Controllers
 {
-    public class ListingController : Controller
+    public class ListingController(IListingService listingService) : Controller
     {
-        private readonly IListingService _listingService;
-        private readonly IWebHostEnvironment _webHostEnvironment;
-
-        public ListingController(IListingService listingService)
-        {
-            _listingService = listingService;
-        }
+        private readonly IListingService _listingService = listingService;
+        private readonly IWebHostEnvironment? _webHostEnvironment;
 
         // GET: Listing
         public async Task<IActionResult> Index()
@@ -48,21 +34,22 @@ namespace BidingApp.Controllers
         // }
 
         // // GET: Listing/Create
-        // public IActionResult Create()
-        // {
-        //     return View();
-        // }
-
-        // // POST: Listing/Create
-        // // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        public IActionResult Create()
+        {
+            return View();
+        }
+        
+        // POST: Listing/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ListingVM listing)
         {
             if(listing.Image != null)
             {
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                var dirPath = _webHostEnvironment!.WebRootPath;
+                string uploadDir = Path.Combine(dirPath, "images");
                 string fileName = listing.Image.FileName;
                 string filePath = Path.Combine(uploadDir, fileName);
                 using(var fileStream = new FileStream(filePath, FileMode.Create))
