@@ -1,4 +1,6 @@
 @model IEnumerable<BidingApp.Listing>
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<IdentityUser> userManager;
 
 @{
     ViewData["Title"] = "Bids Listings";
@@ -17,26 +19,32 @@ Create New Listing
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    @Html.DisplayNameFor(model => model.Title)
+                    @* @Html.DisplayNameFor(model => model.Title) *@
+                    Title
                 </th>
                 <th scope="col" class="px-6 py-3">
-                     @Html.DisplayNameFor(model => model.Description)
+                     @* @Html.DisplayNameFor(model => model.Description) *@
+                Description
                 </th>
                 <th scope="col" class="px-6 py-3">
-                     @Html.DisplayNameFor(model => model.Price)
+                     @* @Html.DisplayNameFor(model => model.Price) *@
+                     Price
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    @Html.DisplayNameFor(model => model.ImgPath)
+                    @* @Html.DisplayNameFor(model => model.ImgPath) *@
+                    Image
                 </th>
                 <th scope="col" class="px-6 py-3">
-                   @Html.DisplayNameFor(model => model.IsSold) 
+                   @* @Html.DisplayNameFor(model => model.IsSold)  *@
+                   Status
                 </th>
                 <th scope="col" class="px-6 py-3">
-                   @Html.DisplayNameFor(model => model.IdentityUserId) 
+                   @* @Html.DisplayNameFor(model => model.IdentityUserId)  *@
+                   Owner
                 </th>
                
 <th scope="col" class="px-6 py-3">
-                    Action
+                    Actions
                 </th>
                
             </tr>
@@ -57,7 +65,7 @@ Create New Listing
                           @Html.DisplayFor(modelItem => listing.Price)
                 </td>
                 <td class="px-6 py-4">
-                    <img src="/wwwroot/images/@listing.ImgPath" />
+                    <img src="/@listing.ImgPath" class="w-10 h-10" width="1529" height="659"/>
                 </td>
                 <td class="px-6 py-4">
                           @Html.DisplayFor(modelItem => listing.IsSold)
@@ -66,8 +74,11 @@ Create New Listing
                           @Html.DisplayFor(modelItem => listing.IdentityUserId)
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-white bg-red-400 dark:text-red-500 hover:underline">Delete</a>
+                    <div class="flex justify-between w-[20px]">
+
+                    <a href="#" class="font-medium text-white bg-blue-600 rounded px-3 py-[3px]">Edit</a>
+                    <a href="#" class="font-medium text-white bg-red-400 rounded px-2 py-[3px]">Delete</a>
+                    </div>
                 </td>
             </tr>
             }

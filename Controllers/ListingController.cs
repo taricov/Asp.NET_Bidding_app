@@ -54,7 +54,7 @@ namespace BidingApp.Controllers
         {
             if(listing.Image != null)
             {
-                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                string uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "Images");
                 string fileName = listing.Image.FileName;
                 string filePath = Path.Combine(uploadDir, fileName);
                 using(var fileStream = new FileStream(filePath, FileMode.Create))
