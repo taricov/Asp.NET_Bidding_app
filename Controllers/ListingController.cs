@@ -21,23 +21,22 @@ namespace BidingApp.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // // GET: Listing/Details/5
-        // public async Task<IActionResult> Details(int? id)
-        // {
-        //     if (id == null)
-        //     {
-        //         return NotFound();
-        //     }
+        // GET: Listing/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //     var listing = await _context.Listings
-        //         .FirstOrDefaultAsync(m => m.Id == id);
-        //     if (listing == null)
-        //     {
-        //         return NotFound();
-        //     }
+            var listing = await _listingService.GetById(id);
+            if (listing == null)
+            {
+                return NotFound();
+            }
 
-        //     return View(listing);
-        // }
+            return View(listing);
+        }
 
         // // GET: Listing/Create
         public IActionResult Create()

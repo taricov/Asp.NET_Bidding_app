@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "s3rxG6BTcOqrZK9ScnvxjEHeRuJFXY2R4dLnpmxdOgg=",
+  "Hash": "tV4xgRhV1Fe01L6cq1M3/MIomOitRry2VitV2DbTEiM=",
   "Source": "BidingApp",
   "BasePath": "_content/BidingApp",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/taricov/dev/BidingApp/wwwroot/Images/SCR-20240306-sd7.jpeg",
+      "SourceId": "BidingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/taricov/dev/BidingApp/wwwroot/",
+      "BasePath": "_content/BidingApp",
+      "RelativePath": "Images/SCR-20240306-sd7.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Images/SCR-20240306-sd7.jpeg"
     },
     {
       "Identity": "/Users/taricov/dev/BidingApp/wwwroot/js/site.js",

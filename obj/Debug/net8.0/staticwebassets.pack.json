@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/BidingApp.bundle.scp.css"
     },
     {
+      "Id": "/Users/taricov/dev/BidingApp/wwwroot/Images/SCR-20240306-sd7.jpeg",
+      "PackagePath": "staticwebassets/Images/SCR-20240306-sd7.jpeg"
+    },
+    {
       "Id": "/Users/taricov/dev/BidingApp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
